@@ -1,7 +1,8 @@
+<!doctype html>
 <html class="staticrypt-html">
 <head>
     <meta charset="utf-8">
-    <title>Protected Page</title>
+    <title>Information?</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- do not cache this page -->
@@ -126,7 +127,7 @@
             <input id="staticrypt-password"
                    type="password"
                    name="password"
-                   placeholder="7 letters is all you need"
+                   placeholder="passphrase"
                    autofocus/>
 
             <input type="submit" class="staticrypt-decrypt-button" value="DECRYPT"/>
@@ -135,7 +136,7 @@
 
 </div>
 <footer class="staticrypt-footer">
-    <p class="pull-right">It is already <a href="https://google.com">too early</a></p>
+    <p class="pull-right">Created by <a href="https://picassoapprec.github.io/">The Society for the Descension of Gumby</a></p>
 </footer>
 
 
@@ -171,13 +172,13 @@
         e.preventDefault();
 
         var passphrase = document.getElementById('staticrypt-password').value,
-            encryptedMsg = '9bfd179392b954143ef39b3737633e61bce05c4ffd5fc36b3fd39353a9212d2a70c27932bdadc438c4823746d2c891f4b58403643847553da230be8fc9d43f83+0JZnb1rylm6AADqR9e9w3zmUChZnOsa0Sitsd12lKA=',
+            encryptedMsg = 'a055d32527111951d0adc36ae5214fff926aabb2fb456d73293c48706ceacffc547d6efeb98c09d63081d8c9c701966656e01ce4b6d1678e4e829b6d573163e5F1p7njGoznByR44SEQkX3Zm5UybYAGY+foaiG8iSwro9AL5Bd7J+tq91GNswMsFb0kQFtiHBaL8vKUcVP8ktc7dk5y4wPaOwxjndc9lAtQTw39eR4yyVvk0GrOz9kB9ATzDLCYsi0p+D7Az7jtholw==',
             encryptedHMAC = encryptedMsg.substring(0, 64),
             encryptedHTML = encryptedMsg.substring(64),
             decryptedHMAC = CryptoJS.HmacSHA256(encryptedHTML, CryptoJS.SHA256(passphrase).toString()).toString();
 
         if (decryptedHMAC !== encryptedHMAC) {
-            alert('Bad passphrase!');
+            alert('Try again, if you wish.');
             return;
         }
 
