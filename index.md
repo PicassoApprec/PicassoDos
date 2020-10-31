@@ -127,7 +127,7 @@
             <input id="staticrypt-password"
                    type="password"
                    name="password"
-                   placeholder="passphrase"
+                   placeholder="7 letter is all you need"
                    autofocus/>
 
             <input type="submit" class="staticrypt-decrypt-button" value="DECRYPT"/>
@@ -144,10 +144,6 @@
 
 <script>
 
-    /**
-     * Decrypt a salted msg using a password.
-     * Inspired by https://github.com/adonespitogo
-     */
     var keySize = 256;
     var iterations = 1000;
     function decrypt (encryptedMsg, pass) {
